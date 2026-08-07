@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   reactStrictMode: true,
+  images:{
+    domains:["media.licdn.com"]
+  }
 };
 
 export default nextConfig;
