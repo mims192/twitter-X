@@ -6,3 +6,7 @@ export const graphqlClient = new GraphQLClient('http://localhost:4000/graphql',{
         Authorization:isClient? `Bearer ${window.localStorage.getItem('userToken') }`:"",
     })
 })
+
+export const publicGraphqlClient = new GraphQLClient(
+  "http://localhost:4000/graphql"
+);

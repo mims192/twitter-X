@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BiMessageRounded, BiUpload } from "react-icons/bi";
 import { FaHeart, FaRetweet } from "react-icons/fa";
 import { GetAllTweetsQuery } from "@/gql/graphql";
+import Link from "next/link";
 
 interface FeedCardProps{
     data:GetAllTweetsQuery["getTweets"][number];
@@ -19,7 +20,9 @@ const FeedCard:React.FC<FeedCardProps>=(props)=>{
                {data.author?.profileImgUrl &&  <Image src={data.author?.profileImgUrl} alt="Profile" className="rounded-full " width={50} height={50} />}
             </div>
             <div className="col-span-11">
-                <h5>{data.author?.firstName} {data.author?.lastName}</h5>
+               <Link href={`/${data.author?.id}`}>
+               <h5>{data.author?.firstName} {data.author?.lastName}</h5>
+               </Link> 
                 <p>{data.content}</p>
             <div className="flex justify-between mt-5 text-xl items-center text-gray-600 p-2 w-[90%]">
                  <div><BiMessageRounded/></div>

@@ -11,3 +11,6 @@ export const useCurrentUser = () => {
     return {...query,user:query.data?.getcurrentUser}
 }
 
+export const getUserByid=()=>{
+    
+}
